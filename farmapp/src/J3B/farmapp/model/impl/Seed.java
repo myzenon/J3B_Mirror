@@ -19,7 +19,7 @@ public class Seed implements Plantable, Item {
 	}
 
 	public Growable plant(){
-		return this.plant;
+		return this.plant.clone();
 	}
 
 }

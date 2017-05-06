@@ -21,4 +21,8 @@ public class Bag {
     public List<Item> getItems() {
         return items;
     }
+
+    public boolean removeItem(Item item) {
+        return this.items.remove(item);
+    }
 }
