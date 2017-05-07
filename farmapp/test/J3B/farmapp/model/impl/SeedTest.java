@@ -20,6 +20,7 @@ public class SeedTest {
 	    Plant plant = new Plant("coconut tree" , 1, waterInfo1, healthInfo1, fruit1);
         Seed seed = new Seed("coconut seed", plant);
        assertEquals(seed.plant().getName(), plant.getName());
+       assertEquals(seed.plant().getAge(), plant.getAge());
     }	
 
 }
