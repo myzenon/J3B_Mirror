@@ -13,6 +13,22 @@ import J3B.farmapp.util.Input;
 
 public class ConsoleMenuTest {
     @Test
+    public void seedPlant() throws Exception {
+        GameController gc = new GameController();
+        consoleMenu = new ConsoleMenu(gc);
+        Input.setSystemInput(new ByteArrayInputStream("2".getBytes()));
+        consoleMenu.seedPlant();
+    }
+
+    @Test
+    public void sleep() throws Exception {
+        GameController gc = new GameController();
+        consoleMenu = new ConsoleMenu(gc);
+        Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
+        consoleMenu.sleep();
+    }
+
+    @Test
     public void viewPlants() throws Exception {
         GameController gc = new GameController();
         consoleMenu = new ConsoleMenu(gc);
@@ -31,7 +47,7 @@ public class ConsoleMenuTest {
         consoleMenu = new ConsoleMenu(gc);
         gc.plantSeed(gc.getSeeds().get(0));
         Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
-        consoleMenu.viewInventory();
+        consoleMenu.waterPlant();
     }
 
     @Test
@@ -75,9 +91,8 @@ public class ConsoleMenuTest {
         gc.getPlayer().getInventory().addItem(new Fruit("Apple",10));
         gc.getPlayer().getInventory().addItem(new Fruit("Orange",10));
         gc.getPlayer().getInventory().addItem(new Fruit("Mango",10));
-    	 Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
-        Input.setSystemInput(new ByteArrayInputStream("2 1 1 1 3 1".getBytes()));
-       Input.setSystemInput(new ByteArrayInputStream("4 1".getBytes()));
+
+        Input.setSystemInput(new ByteArrayInputStream("2 1 1 1".getBytes()));
        Input.setSystemInput(new ByteArrayInputStream("5 3 1".getBytes()));
         Input.setSystemInput(new ByteArrayInputStream("5 3 2".getBytes()));
         Input.setSystemInput(new ByteArrayInputStream("5 3 3".getBytes()));
@@ -87,7 +102,13 @@ public class ConsoleMenuTest {
             gc.sleep();
         }
         Input.setSystemInput(new ByteArrayInputStream("6 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("3 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("4 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("8 1".getBytes()));
         consoleMenu.showAll();
+
+
     }
     
 }
