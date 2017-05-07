@@ -40,5 +40,8 @@ int maxHunger = 100;
         player.eatFruit(fruit);
         //60+17=77
 		assertEquals(player.getHunger(),77);
+		player.eatFruit(fruit);
+		player.eatFruit(fruit);
+		assertEquals(player.getHunger(),100);
 	}
 }
