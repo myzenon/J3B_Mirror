@@ -17,7 +17,7 @@ public class ConsoleMenuTest {
     public void showAll() throws Exception {
     	GameController gc = new GameController();
     	consoleMenu = new ConsoleMenu(gc);
-    	 Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
         consoleMenu.showAll();
     }
     

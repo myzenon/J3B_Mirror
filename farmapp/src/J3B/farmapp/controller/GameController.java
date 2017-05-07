@@ -61,10 +61,11 @@ public class GameController {
 	}
 
 	public void startGame() {
+		boolean isExit = false;
 		do {
-			prompt.showAll();
+			isExit = prompt.showAll();
 		}
-		while (true);
+		while (isExit);
 	}
 
 	public boolean plantSeed(Seed seed) {
