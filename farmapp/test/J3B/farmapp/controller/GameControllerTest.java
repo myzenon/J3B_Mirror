@@ -1,9 +1,11 @@
 package J3B.farmapp.controller;
 
 import J3B.farmapp.model.Growable;
+import J3B.farmapp.model.impl.Bag;
 import J3B.farmapp.model.impl.Fruit;
 import J3B.farmapp.model.impl.HealthInfo;
 import J3B.farmapp.model.impl.Plant;
+import J3B.farmapp.model.impl.Player;
 import J3B.farmapp.model.impl.Seed;
 import J3B.farmapp.model.impl.WaterInfo;
 
@@ -70,6 +72,16 @@ public class GameControllerTest {
          gameController.waterPlant(plant);//+2
          gameController.waterPlant(plant);//+2 = 12
          assertEquals(plant.getWaterInfo().getWater(),12);
+    }
+    @Test
+    public void getFruits(){
+    	Bag iventory = new Bag();
+    	Player player = new Player("Alex",iventory,100);
+    	Fruit fruity = new Fruit("Test Fruit", 50);
+    	player.getInventory().addItem(fruity);
+    	//Test fruit must be in fruit list
+    	  assertEquals(player.getInventory().getItems().get(0).getName(),"Test Fruit");
+    	
     }
 
 }
