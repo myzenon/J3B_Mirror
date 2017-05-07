@@ -78,8 +78,9 @@ public class GameControllerTest {
     	 GameController gameController = new GameController();
     	Fruit fruity = new Fruit("Test Fruit", 50);
     	gameController.getPlayer().getInventory().addItem(fruity);
+    	
     	//Test fruit must be in fruit list
-    	  assertEquals(gameController.getPlayer().getInventory().getItems().get(0).getName(),"");
+    	  assertEquals(gameController.getFruits().get(0).getName(),"Test Fruit");
     	
     }
 
