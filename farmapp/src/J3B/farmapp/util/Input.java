@@ -1,7 +1,6 @@
 package J3B.farmapp.util;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Input {
@@ -36,17 +35,14 @@ public class Input {
         return -1;
     }
 
-    public static double readDouble() {
-        try {
-            return Double.parseDouble(readToken());
-        }
-        catch (Exception e) {}
-        return -1;
-    }
-
     public static void pressEnterKey() {
         System.out.println("\nPress enter to continue ...");
         readString();
+    }
+
+    public static void setSystemInput(InputStream inputStream) {
+        // Used for test
+        reader = new BufferedReader(new InputStreamReader(inputStream));
     }
 
 }
