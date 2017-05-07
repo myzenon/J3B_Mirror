@@ -39,7 +39,11 @@ public class PlantTest {
         plant.grow();
         plant.grow();
         plant.grow();
+        plant.grow();
+        plant.grow();
         assertEquals(plant.getStatus(), "HarvestReady");
+        Fruit fruit = (Fruit)plant.harvest();
+        assertEquals(fruit.getName(),"Test Fruit");
     }
 
     @Test
@@ -77,7 +81,36 @@ public class PlantTest {
         plant.grow();
         plant.grow();
         plant.grow();
+        plant.grow();
+        plant.grow();
         assertEquals(plant.getDaysNextStatus(), 0);
-    }
 
+    }
+    
+    @Test
+    public void WaterAndPhasePlant(){
+    	Plant plant = new Plant("testPlant", 1, waterInfo1, healthInfo1, fruit1);
+    	// decrease the water 
+    	plant.getWaterInfo().nextPhase();
+    	plant.getWaterInfo().nextPhase();
+    	// should decrease to 12
+    	 assertEquals(plant.getWaterInfo().getWater(), 12);
+    	// should increase to 14
+    	 plant.water();
+    	 assertEquals(plant.getWaterInfo().getWater(), 14);
+    	 
+    }
+    @Test
+    public void clonePlant(){
+    	Plant plant = new Plant("testPlant", 1, waterInfo1, healthInfo1, fruit1);
+    	Plant plant2 = plant.clone();
+    	
+   	 assertEquals(plant.getName(),plant2.getName());
+   	assertEquals(plant.getFruit().getName(),plant2.getFruit().getName());
+	assertEquals(plant.getHealthInfo().getHealth(),plant2.getHealthInfo().getHealth());
+    }
+    @Test
+    public void harvestFruit(){
+    	
+    }
 }
