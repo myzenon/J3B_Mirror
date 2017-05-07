@@ -54,6 +54,8 @@ public class ConsoleMenuTest {
     public void harvestFruit() throws Exception {
         GameController gc = new GameController();
         consoleMenu = new ConsoleMenu(gc);
+        Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
+        consoleMenu.harvestFruit();
         gc.plantSeed(gc.getSeeds().get(1));
         for (int i = 0; i < 100 ; i++) {
             gc.sleep();
@@ -92,19 +94,39 @@ public class ConsoleMenuTest {
         gc.getPlayer().getInventory().addItem(new Fruit("Orange",10));
         gc.getPlayer().getInventory().addItem(new Fruit("Mango",10));
 
-        Input.setSystemInput(new ByteArrayInputStream("2 1 1 1".getBytes()));
+
        Input.setSystemInput(new ByteArrayInputStream("5 3 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("5 3 2".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("5 3 3".getBytes()));
+        consoleMenu.showAll();
+
 
         consoleMenu.showAll();
         for (int i = 0; i < 2 ; i++) {
             gc.sleep();
         }
+        Input.setSystemInput(new ByteArrayInputStream("1 1".getBytes()));
+        consoleMenu.showAll();
+
+        Input.setSystemInput(new ByteArrayInputStream("2 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("6 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("3 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("4 1".getBytes()));
+        consoleMenu.showAll();
+
         Input.setSystemInput(new ByteArrayInputStream("8 1".getBytes()));
         consoleMenu.showAll();
 
