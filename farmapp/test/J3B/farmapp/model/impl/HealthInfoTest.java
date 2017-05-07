@@ -32,7 +32,6 @@ public class HealthInfoTest {
         plant1.grow();
         assertEquals(plant1.getHealthInfo().getHealthPercent(),50);
     }
-
     @Test
     public void nextPhase() throws Exception {
         HealthInfo healthInfo = new HealthInfo(30, 50, 100);
@@ -40,12 +39,17 @@ public class HealthInfoTest {
         waterInfo.nextPhase();
         healthInfo.nextPhase(waterInfo);
         assertEquals(healthInfo.getHealthPercent(),100);
-        waterInfo.nextPhase();
-        waterInfo.nextPhase();
-        waterInfo.nextPhase();
-        waterInfo.nextPhase();
+        for (int i = 0; i < 4 ; i++){
+            waterInfo.nextPhase();
+        }
         healthInfo.nextPhase(waterInfo);
         assertEquals(healthInfo.getHealthPercent(),50);
+        for (int i = 0; i < 10 ; i++){
+            waterInfo.water();
+        }
+        healthInfo.nextPhase(waterInfo);
+        healthInfo.nextPhase(waterInfo);
+        assertEquals(healthInfo.getHealthPercent(),100);
     }
 
     @Test
