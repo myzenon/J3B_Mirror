@@ -28,25 +28,6 @@ public class PlantTest {
     }
 
     @Test
-    public void getStatusFinal() throws Exception {
-        Plant plant = new Plant("testPlant", 1, waterInfo1, healthInfo1, fruit1);
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        plant.grow();
-        assertEquals(plant.getStatus(), "HarvestReady");
-        Fruit fruit = (Fruit)plant.harvest();
-        assertEquals(fruit.getName(),"Test Fruit");
-    }
-
-    @Test
     public void getAge() throws Exception {
         Plant plant = new Plant("testPlant", 3, waterInfo1, healthInfo1, fruit1);
         plant.grow();

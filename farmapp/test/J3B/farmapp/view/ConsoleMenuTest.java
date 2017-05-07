@@ -33,7 +33,7 @@ public class ConsoleMenuTest {
         GameController gc = new GameController();
         consoleMenu = new ConsoleMenu(gc);
         gc.plantSeed(gc.getSeeds().get(1));
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             gc.sleep();
         }
         Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
@@ -117,22 +117,22 @@ public class ConsoleMenuTest {
         Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("2 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("2".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("6 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("6".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("7".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("3 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("3".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("4 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("4".getBytes()));
         consoleMenu.showAll();
 
-        Input.setSystemInput(new ByteArrayInputStream("8 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("8".getBytes()));
         consoleMenu.showAll();
 
 

@@ -51,9 +51,10 @@ public class ConsoleMenu {
 				sleep();
 				break;
 			case 8:
-				return true;
+				System.out.println("Bye ~*");
+				return false;
 		}
-		return false;
+		return true;
 	}
 
 	public void viewPlants() {

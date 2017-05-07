@@ -29,7 +29,7 @@ public class GameController {
 		WaterInfo waterInfo2 = new WaterInfo(30, 60, 10, 90, 5);
 
 		HealthInfo healthInfo1 = new HealthInfo(30, 50, 100);
-		HealthInfo healthInfo2 = new HealthInfo(10, 0, 20);
+		HealthInfo healthInfo2 = new HealthInfo(10, 10, 20);
 
 		Fruit fruit1 = new Fruit("Coconut", 50);
 		Fruit fruit2 = new Fruit("Apple", 7);
@@ -61,11 +61,11 @@ public class GameController {
 	}
 
 	public void startGame() {
-		boolean isExit = false;
+		boolean isContinue = false;
 		do {
-			isExit = prompt.showAll();
+			isContinue = prompt.showAll();
 		}
-		while (isExit);
+		while (isContinue);
 	}
 
 	public boolean plantSeed(Seed seed) {
