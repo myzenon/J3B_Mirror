@@ -75,12 +75,11 @@ public class GameControllerTest {
     }
     @Test
     public void getFruits(){
-    	Bag iventory = new Bag();
-    	Player player = new Player("Alex",iventory,100);
+    	 GameController gameController = new GameController();
     	Fruit fruity = new Fruit("Test Fruit", 50);
-    	player.getInventory().addItem(fruity);
+    	gameController.getPlayer().getInventory().addItem(fruity);
     	//Test fruit must be in fruit list
-    	  assertEquals(player.getInventory().getItems().get(0).getName(),"Test Fruit");
+    	  assertEquals(gameController.getPlayer().getInventory().getItems().get(0).getName(),"");
     	
     }
 
