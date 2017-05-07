@@ -19,8 +19,6 @@ public class ConsoleMenuTest {
     	consoleMenu = new ConsoleMenu(gc);
     	 Input.setSystemInput(new ByteArrayInputStream("7 1".getBytes()));
         consoleMenu.showAll();
-       
-//      assertEquals(Input.readString(), "7");
     }
     
 }
