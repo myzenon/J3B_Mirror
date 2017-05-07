@@ -32,13 +32,18 @@ public class ConsoleMenuTest {
     public void viewPlants() throws Exception {
         GameController gc = new GameController();
         consoleMenu = new ConsoleMenu(gc);
-        gc.plantSeed(gc.getSeeds().get(0));
-        for (int i = 0; i < 5 ; i++) {
+        gc.plantSeed(gc.getSeeds().get(1));
+        for (int i = 0; i < 2; i++) {
             gc.sleep();
         }
         Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
         consoleMenu.viewPlants();
 
+        for (int i = 0; i < 20; i++) {
+            gc.sleep();
+        }
+        Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
+        consoleMenu.viewPlants();
 
     }
     @Test
@@ -109,7 +114,7 @@ public class ConsoleMenuTest {
         for (int i = 0; i < 2 ; i++) {
             gc.sleep();
         }
-        Input.setSystemInput(new ByteArrayInputStream("1 1".getBytes()));
+        Input.setSystemInput(new ByteArrayInputStream("1".getBytes()));
         consoleMenu.showAll();
 
         Input.setSystemInput(new ByteArrayInputStream("2 1".getBytes()));
