@@ -18,7 +18,7 @@ public class GameControllerTest {
 	HealthInfo healthInfo1 = new HealthInfo(30, 50, 100);
 	Fruit fruit1 = new Fruit("Test Fruit", 50);
     @Test
-    public void getPlants() throws Exception {
+     public void getPlants() throws Exception {
         GameController gameController = new GameController();
         Plant plant = new Plant("testPlant", 5, waterInfo1, healthInfo1, fruit1);
         gameController.plantSeed(new Seed("testSeed", plant));

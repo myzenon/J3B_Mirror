@@ -17,7 +17,7 @@ public class ConsoleMenu {
 		this.gameController = gameController;
 	}
 
-	public void showAll() {
+	public boolean showAll() {
 		System.out.println("\n-- Select an action --");
 		System.out.println("1> View Plants in Garden");
 		System.out.println("2> Plant a seed");
@@ -26,7 +26,8 @@ public class ConsoleMenu {
 		System.out.println("5> View Inventory");
 		System.out.println("6> View Player Info");
 		System.out.println("7> Sleep One day");
-		System.out.print("Please select an action (1-4) >> ");
+		System.out.println("8> Exit Game");
+		System.out.print("Please select an action (1-8) >> ");
 		switch (Input.readInt()) {
 			case 1:
 				viewPlants();
@@ -49,8 +50,10 @@ public class ConsoleMenu {
 			case 7:
 				sleep();
 				break;
-				
+			case 8:
+				return true;
 		}
+		return false;
 	}
 
 	public void viewPlants() {
